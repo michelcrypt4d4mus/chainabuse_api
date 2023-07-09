@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "chainabuse-extractor"
+version = "0.1.0"
+description = "Query the chainabuse.com API."
+authors = ["Chain Argos"]
+readme = "README.md"
+packages = [{include = "chainabuse_extractor"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+rich = "^13.4.2"
+requests = "^2.31.0"
+pendulum = "^2.1.2"
+tenacity = "^8.2.2"
+requests-toolbelt = "^1.0.0"
+inflection = "^0.5.1"
+
+
+[tool.poetry.group.dev.dependencies]
+bpython = "^0.24"
+pytest = "^7.4.0"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+extract_tron_transactions = 'chainabuse_extractor:get_chainabuse_reports'
